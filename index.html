@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Brightcove Player Sample: Captions Animate</title>
+	<style>
+    /* Transtion the captions down vertically when user is not hovering over the player */
+		.video-js.not-hover.vjs-has-started.vjs-paused.vjs-user-active .vjs-text-track-display,
+		.video-js.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive .vjs-text-track-display,
+		.video-js.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-text-track-display,
+		.video-js.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-text-track-display,
+		.video-js.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive .vjs-text-track-display,
+		.video-js.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-text-track-display,
+		.video-js.vjs-ended .vjs-text-track-display{
+			transform: translateY(2em);
+			-ms-transform: translateY(2em);
+			-webkit-transform: translateY(2em);
+			-moz-transform: translateY(2em);
+			transition: transform .5s ease 0s;
+		}
+    /* Transition the captions vertically above the control bar */
+		.video-js .vjs-text-track-display{
+			bottom: 2em!important;
+			transition: transform .5s ease 0s;
+		}
+	</style>
+
+</head>
+
+<body>
+	<video id="myPlayerID"
+    data-video-id="5706921945001"
+    data-account="1752604059001"
+    data-player="default"
+    data-embed="default"
+    class="video-js"
+    width="640" height="360"
+    controls></video>
+    <script src="//players.brightcove.net/1752604059001/default_default/index.min.js"></script>
+
+	<script>
+    videojs("myPlayerID").ready(function(){
+			var myPlayer = this;
+      // Optional muting of the player for testing
+      myPlayer.muted(true);
+      // Wait till player metadata has loaded
+			myPlayer.on("loadedmetadata", function () {
+        // Open the English version captions
+			  var lang="en";
+			  for (var i = 0; i < (myPlayer.textTracks().length); i++) {
+			    if (myPlayer.textTracks()[i].language == lang) {
+			      myPlayer.textTracks()[i].mode = "showing";
+			    }
+			  }
+			});
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Brightcove Player Sample: Captions Animate</title>
+  <link href="captions-animate.css" rel="stylesheet">
+</head>
+
+<body>
+  <video id="myPlayerID"
+    data-video-id="5706921945001"
+    data-account="1752604059001"
+    data-player="default"
+    data-embed="default"
+    class="video-js"
+    width="640" height="360"
+    controls></video>
+  <script src="//players.brightcove.net/1752604059001/default_default/index.min.js"></script>
+
+  <script type="text/javascript" src="captions-animate.js"></script>
+  <script>videojs('myPlayerID').captionsAnimate();</script>
+
+</body>
+</html>
