@@ -1,4 +1,4 @@
-videojs.registerPlugin('captionsAnimate', function() {
+videojs.registerPlugin('captionAnimation', function() {
     var myPlayer = this;
 
     // Optional muting of the player for testing
