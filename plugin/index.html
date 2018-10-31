@@ -8,18 +8,18 @@
 </head>
 
 <body>
-  <video id="myPlayerID"
+  <video-js id="myPlayerID"
     data-video-id="5706921945001"
     data-account="1752604059001"
     data-player="default"
     data-embed="default"
     class="video-js"
     width="640" height="360"
-    controls></video>
-  <script src="//players.brightcove.net/1752604059001/default_default/index.min.js"></script>
+    controls></video-js>
+  <script src="https://players.brightcove.net/1752604059001/default_default/index.min.js"></script>
 
   <script type="text/javascript" src="caption-animation.js"></script>
-  <script>videojs('myPlayerID').captionAnimation();</script>
+  <script>videojs.getPlayer('myPlayerID').captionAnimation();</script>
 
 </body>
 </html>

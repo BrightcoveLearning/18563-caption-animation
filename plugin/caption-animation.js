@@ -16,5 +16,4 @@ videojs.registerPlugin('captionAnimation', function() {
         }
       }
     });
-
 });
